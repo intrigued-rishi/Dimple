@@ -1,0 +1,15 @@
+{'account_id': 871666, 'limit': 10000, 'products': ['InvestmentFund', 'CurrencyService', 'InvestmentStock'], 'perf_timestamp': '2022-06-28T12:10:00'}
+{'account_id': 837092, 'limit': 10000, 'products': ['Derivatives', 'InvestmentStock'], 'perf_timestamp': '2022-06-28T12:10:01'}
+{'account_id': 243254, 'limit': 10000, 'products': ['Commodity', 'Brokerage', 'InvestmentFund', 'InvestmentStock'], 'perf_timestamp': '2022-06-28T12:10:01'}
+{'account_id': 757619, 'limit': 10000, 'products': ['Brokerage', 'InvestmentStock', 'Derivatives', 'InvestmentFund'], 'perf_timestamp': '2022-06-28T12:10:02'}
+{'account_id': 979257, 'limit': 10000, 'products': ['InvestmentStock', 'Commodity', 'InvestmentFund'], 'perf_timestamp': '2022-06-28T12:10:03'}
+{'account_id': 111287, 'limit': 10000, 'products': ['Commodity', 'InvestmentStock', 'Derivatives', 'InvestmentFund'], 'perf_timestamp': '2022-06-28T12:10:03'}
+{'account_id': 671035, 'limit': 10000, 'products': ['CurrencyService', 'InvestmentStock', 'InvestmentFund'], 'perf_timestamp': '2022-06-28T12:10:04'}
+{'account_id': 401811, 'limit': 10000, 'products': ['InvestmentStock', 'Derivatives', 'Brokerage'], 'perf_timestamp': '2022-06-28T12:10:05'}
+{'account_id': 572981, 'limit': 10000, 'products': ['InvestmentStock', 'CurrencyService'], 'perf_timestamp': '2022-06-28T12:10:05'}
+{'account_id': 238687, 'limit': 10000, 'products': ['Brokerage', 'InvestmentFund', 'CurrencyService', 'InvestmentStock'], 'perf_timestamp': '2022-06-28T12:10:06'}
+{'account_id': 511276, 'limit': 10000, 'products': ['Commodity', 'InvestmentFund', 'InvestmentStock'], 'perf_timestamp': '2022-06-28T12:10:06'}
+{'account_id': 235824, 'limit': 10000, 'products': ['InvestmentStock', 'Derivatives', 'Brokerage', 'CurrencyService'], 'perf_timestamp': '2022-06-28T12:10:07'}
+{'account_id': 323327, 'limit': 10000, 'products': ['InvestmentFund', 'InvestmentStock'], 'perf_timestamp': '2022-06-28T12:10:08'}
+{'account_id': 170980, 'limit': 5000, 'products': ['InvestmentFund', 'Brokerage', 'CurrencyService', 'Derivatives', 'InvestmentStock'], 'perf_timestamp': '2022-06-28T12:10:08'}
+{'account_id': 770312, 'limit': 10000, 'products': ['Commodity', 'InvestmentStock'], 'perf_timestamp': '2022-06-28T12:10:09'}

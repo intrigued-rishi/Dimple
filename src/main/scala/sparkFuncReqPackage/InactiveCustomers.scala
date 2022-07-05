@@ -1,0 +1,5 @@
+package sparkFuncReqPackage
+
+object InactiveCustomers {
+  
+}
