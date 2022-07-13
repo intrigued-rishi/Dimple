@@ -29,16 +29,16 @@ object Test3 {
         val inputDF1 = spark
             .readStream
             .format("kafka") // org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.5
-            .option("kafka.bootstrap.servers", "localhost:9092")
+            .option("kafka.bootstrap.servers", "34.131.208.49:9092")
             .option("failOnDataLoss", "false")
-            .option("subscribe", "transactions")
+            .option("subscribe", "Transaction")
             .load()
             
         val inputDF2 = spark
             .readStream
             .format("kafka") // org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.5
-            .option("kafka.bootstrap.servers", "localhost:9092")
-            .option("subscribe", "customers")
+            .option("kafka.bootstrap.servers", "34.131.208.49:9092")
+            .option("subscribe", "Customer")
             .load()
 
         val IdType = new StructType()
@@ -52,7 +52,6 @@ object Test3 {
            .add("username",StringType)
            .add("name", StringType)
            .add("address", StringType)
-           .add("location", StringType)
            .add("birthdate", StringType)
            .add("email", StringType)
            .add("system_time", StringType)
@@ -112,51 +111,33 @@ object Test3 {
 //        structuredDF3.printSchema()
       
     	
-        val uri = "mongodb://localhost:27017/"
-       
+        val uri = "mongodb://<usr>:<pwd>@ac-wdmvc7b-shard-00-00.va5zps6.mongodb.net:27017,ac-wdmvc7b-shard-00-01.va5zps6.mongodb.net:27017,ac-wdmvc7b-shard-00-02.va5zps6.mongodb.net:27017/?ssl=true&replicaSet=atlas-fwr7sf-shard-0&authSource=admin&retryWrites=true&w=majority"
 	    
-         try{
+        try{
            
-           
-
-//           val sDF1=structuredDF1.select(col("system_time")).withColumn("topic", lit("transaction"));
-//           val sDF2=structuredDF2.select(col("system_time")).withColumn("topic", lit("customer"));
-//           val currDF=sDF1.union(sDF2);
-//           val resDF=currDF.groupBy("topic").count()
-//           
-//           val df3=structuredDF2.withColumn("age", year(col("birthdate")))
-//                                .withColumn("acc_len", size(col("accounts")))
-//                                
-//           val temp_df = structuredDF1.withColumn("prev_timestamp", concat(col("prev_date"),lit("T"),col("prev_time")))
-//                                      .withColumn("standard_time", to_timestamp(lit("2015-01-01T00:00:00")));
-//    
-//           val stockTradeDF = temp_df.filter(to_timestamp(col("date")) >= col("standard_time") && col("prev_timestamp") < col("standard_time") )
-//                                     .groupBy("address")
-//                                     .count() 
-//                                
-//            logger.info("first log")
            
            val resDF1=TransactionAmount.compute(structuredDF1)
            val resDF2=TransactionPattern.compute(structuredDF1)
            
            
            //df5.printSchema();
-           structuredDF2.writeStream
-            .format("mongodb")
-            .option("checkpointLocation", "/tmp/mongod/rishi8")
-            .option("forceDeleteTempCheckpointLocation", true)
-            .option("spark.mongodb.connection.uri", "mongodb://localhost:27017/")
-            .option("spark.mongodb.database", "sample_analytics")
-            .option("spark.mongodb.collection", "dump2")
+//           structuredDF1.writeStream
+//            .format("mongodb")
+//            .option("checkpointLocation", "/home/rishi7/Documents/checkpoints")
+//            .option("forceDeleteTempCheckpointLocation", true)
+//            .option("spark.mongodb.connection.uri", uri)
+////            .option("spark.mongodb.database", "sample_analytics")
+//            .option("spark.mongodb.database", "testdb")
+//            .option("spark.mongodb.collection", "dump2")
+//            .outputMode("append")
+//            .start()
+//            .awaitTermination()
+          
+            structuredDF1.writeStream
+            .format("console")
             .outputMode("append")
             .start()
-            .awaitTermination()
-          
-//            resDF2.writeStream
-//            .format("console")
-//            .outputMode("complete")
-//            .start()
-//            .awaitTermination() 
+            .awaitTermination() 
             
          }catch{
            case a:Exception=>{
