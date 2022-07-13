@@ -80,7 +80,7 @@ class scalaTest extends AnyFunSuite with BeforeAndAfter{
         
         
         
-        val outputDF=spark.read.schema(stockRankByPriceSchema).json("/home/rishi7/Documents/TestOutput/StockRankByPrice.json")
+        val outputDF=spark.read.schema(stockRankByPriceSchema).json("./src/test/scala/FuncReqTest/TestOutput/StockRankByPrice.json")
         
         outputDF.show()
         import spark.implicits._
